@@ -1,11 +1,11 @@
 {
-  "name": "storeapi",
+  "name": "jobify",
   "version": "1.0.0",
   "description": "",
-  "main": "app.ts",
+  "main": "server.ts",
   "type": "module",
   "scripts": {
-    "start": "nodemon app.ts",
+    "start": "nodemon server.ts",
     "build": "tsc"
   },
   "keywords": [],
