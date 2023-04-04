@@ -1,12 +1,16 @@
 import Wrapper from './StyledLanding';
 import main from '../../assets/images/main.svg';
+import { Logo } from '../../components';
+import { Link } from 'react-router-dom';
 
 function Landing(): JSX.Element {
   return (
     <Wrapper>
-      <nav>Logo</nav>
-      <article className="container page">
-        <div>
+      <nav>
+        <Logo />
+      </nav>
+      <div className="container page">
+        <article>
           <h1>
             job <span>traking</span> app
           </h1>
@@ -16,9 +20,9 @@ function Landing(): JSX.Element {
             one. Please click on the button below in order to register if it is
             your first visit. Enjoy !!
           </p>
-        </div>
-        <img className="img" src={main} alt="main image" />
-      </article>
+        </article>
+        <img className="img main-img" src={main} alt="main image" />
+      </div>
     </Wrapper>
   );
 }
