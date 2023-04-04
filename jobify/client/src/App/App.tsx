@@ -1,5 +1,7 @@
+import Landing from '../pages/Landing/Landing';
+
 function App() {
-  return <h1 className="App">jobify</h1>;
+  return <Landing />;
 }
 
 export default App;
