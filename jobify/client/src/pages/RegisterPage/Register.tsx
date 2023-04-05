@@ -1,5 +1,5 @@
 import Wrapper from './StyledRegister';
-import { Logo, FormRaw, Alert } from '../../components';
+import { Logo, FormRow, Alert } from '../../components';
 
 function Register(): JSX.Element {
   return (
@@ -8,9 +8,9 @@ function Register(): JSX.Element {
         <Logo />
         <h3>login</h3>
         <Alert />
-        <FormRaw />
-        <FormRaw />
-        <FormRaw />
+        <FormRow lableName="Name" type="text" />
+        <FormRow lableName="Email" type="text" />
+        <FormRow lableName="Password" type="text" />
         <button type="submit" className="btn btn-block ">
           submit
         </button>

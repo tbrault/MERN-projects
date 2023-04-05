@@ -1,5 +1,5 @@
 import Logo from './Logo';
-import FormRaw from './FormRaw';
+import FormRow from './FormRow';
 import Alert from './Alert';
 
-export { Logo, FormRaw, Alert };
+export { Logo, FormRow, Alert };
