@@ -1,5 +1,5 @@
 import Wrapper from './StyledRegister';
-import { Logo, FormRaw } from '../../components';
+import { Logo, FormRaw, Alert } from '../../components';
 
 function Register(): JSX.Element {
   return (
@@ -7,6 +7,7 @@ function Register(): JSX.Element {
       <form className="form">
         <Logo />
         <h3>login</h3>
+        <Alert />
         <FormRaw />
         <FormRaw />
         <FormRaw />
