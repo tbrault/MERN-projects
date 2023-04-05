@@ -1,11 +1,12 @@
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Landing from '../pages/Landing/Landing';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Landing from '../pages/LandingPage/Landing';
+import NotFound from '../pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <div>Jobify</div>,
-    errorElement: <div>error</div>,
+    errorElement: <NotFound />,
   },
   {
     path: 'landing',
@@ -18,11 +19,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (
-    <>
-      <RouterProvider router={router} />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
