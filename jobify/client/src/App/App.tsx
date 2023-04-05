@@ -1,12 +1,11 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Landing from '../pages/LandingPage/Landing';
-import NotFound from '../pages/ErrorPage/ErrorPage';
+import { ErrorPage, Landing, Register } from '../pages/index.js';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <div>Jobify</div>,
-    errorElement: <NotFound />,
+    errorElement: <ErrorPage />,
   },
   {
     path: 'landing',
@@ -14,7 +13,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'register',
-    element: <div>register</div>,
+    element: <Register />,
   },
 ]);
 
