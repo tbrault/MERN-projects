@@ -51,7 +51,7 @@ function Register(): JSX.Element {
     <Wrapper className="full-page">
       <form className="form" onSubmit={handleFormSubmit}>
         <Logo />
-        <h3>login</h3>
+        <h3>{isMember ? 'login' : 'register'}</h3>
         {alert.isShowingAlert && <Alert alert={alert} clearAlert={setAlert} />}
         {!isMember && (
           <FormRow
@@ -82,7 +82,7 @@ function Register(): JSX.Element {
         <p>
           Not a member yet ?
           <button type="button" className="member-btn" onClick={toggleMember}>
-            Register
+            {isMember ? 'Register' : 'Login'}
           </button>
         </p>
       </form>
