@@ -1,15 +1,30 @@
+import { ChangeEvent } from 'react';
+
 interface FormRowProps {
   type: string;
-  lableName: string;
+  name: string;
+  value: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-function FormRow({ type, lableName }: FormRowProps): JSX.Element {
+function FormRow({
+  type,
+  name,
+  value,
+  handleChange,
+}: FormRowProps): JSX.Element {
   return (
     <div className="form-row">
-      <label htmlFor={lableName} className="form-label">
-        {lableName}
+      <label htmlFor={name} className="form-label">
+        {name}
       </label>
-      <input name={lableName} type={type} className="form-input" />
+      <input
+        name={name}
+        type={type}
+        value={value}
+        onChange={handleChange}
+        className="form-input"
+      />
     </div>
   );
 }

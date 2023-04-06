@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 import Wrapper from './StyledRegister';
 import { Logo, FormRow, Alert } from '../../components';
 import { IAlert, IFormInputValues } from '../../interfaces';
 
 const initialFormInputValues = {
+  name: '',
   email: '',
   password: '',
   isMember: true,
@@ -23,7 +24,7 @@ function Register(): JSX.Element {
   );
   const { email, password, name, isMember } = formInputValues;
 
-  function handleFormSubmit(e: any) {
+  function handleFormSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!email || !password || (!isMember && !name)) {
       setAlert({
@@ -31,7 +32,15 @@ function Register(): JSX.Element {
         type: 'danger',
         isShowingAlert: true,
       });
+    } else if (isMember && name) {
+      console.log(formInputValues);
+    } else {
+      console.log(formInputValues);
     }
+  }
+
+  function handleChange(e: ChangeEvent<HTMLInputElement>) {
+    setFormInputValues({ ...formInputValues, [e.target.name]: e.target.value });
   }
 
   return (
@@ -40,9 +49,26 @@ function Register(): JSX.Element {
         <Logo />
         <h3>login</h3>
         {alert.isShowingAlert && <Alert alert={alert} clearAlert={setAlert} />}
-        {!isMember && <FormRow lableName="Name" type="text" />}
-        <FormRow lableName="Email" type="text" />
-        <FormRow lableName="Password" type="text" />
+        {!isMember && (
+          <FormRow
+            name="name"
+            type="text"
+            handleChange={handleChange}
+            value={name}
+          />
+        )}
+        <FormRow
+          name="email"
+          type="text"
+          handleChange={handleChange}
+          value={email}
+        />
+        <FormRow
+          name="password"
+          type="text"
+          handleChange={handleChange}
+          value={password}
+        />
         <button type="submit" className="btn btn-block ">
           submit
         </button>

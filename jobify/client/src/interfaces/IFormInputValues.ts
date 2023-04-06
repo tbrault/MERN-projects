@@ -1,5 +1,5 @@
 interface IFormInputValues {
-  name?: string;
+  name: string;
   email: string;
   password: string;
   isMember: boolean;
