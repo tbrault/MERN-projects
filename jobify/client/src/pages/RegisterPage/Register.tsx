@@ -32,15 +32,19 @@ function Register(): JSX.Element {
         type: 'danger',
         isShowingAlert: true,
       });
-    } else if (isMember && name) {
-      console.log(formInputValues);
+    } else if (isMember) {
+      console.log(formInputValues, 'first');
     } else {
-      console.log(formInputValues);
+      console.log(formInputValues, 'second');
     }
   }
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     setFormInputValues({ ...formInputValues, [e.target.name]: e.target.value });
+  }
+
+  function toggleMember() {
+    setFormInputValues({ ...formInputValues, isMember: !isMember });
   }
 
   return (
@@ -77,7 +81,7 @@ function Register(): JSX.Element {
         </button>
         <p>
           Not a member yet ?
-          <button type="button" className="member-btn">
+          <button type="button" className="member-btn" onClick={toggleMember}>
             Register
           </button>
         </p>
